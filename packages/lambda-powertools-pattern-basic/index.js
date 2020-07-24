@@ -33,3 +33,5 @@ module.exports = f => {
     }))
     .use(logTimeout())
 }
+
+module.exports.Log = require('@dazn/lambda-powertools-logger')

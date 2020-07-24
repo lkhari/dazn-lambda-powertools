@@ -1,5 +1,6 @@
 import middy from "@middy/core";
 import { Callback, Context } from "aws-lambda";
+import Log from "@dazn/lambda-powertools-logger";
 export * from "@dazn/lambda-powertools-middleware-correlation-ids";
 
 declare type EventType<T, C> = T extends (
@@ -33,3 +34,5 @@ export default function <
   H extends AsyncHandler<C>,
   C extends Context = Context
 >(f: H): middy.Middy<EventType<H, C>, HandlerReturnType<H, C>, C>;
+
+export { Log };
